@@ -3,10 +3,9 @@ import { SearchResults } from '.';
 import { PlacesContext } from '../context';
 import { BiSearchAlt } from 'react-icons/bi';
 
-// Metodo: cuando se termina de escribir se ejecutra la petecion.
 export const SearchBar = () => {
 
-  const { searchPlacesByTerm } = useContext( PlacesContext );
+  const { searchPlacesByTerm, setModal, places } = useContext( PlacesContext );
 
   const debounceRef = useRef<NodeJS.Timeout>();
 
@@ -17,8 +16,13 @@ export const SearchBar = () => {
     
     debounceRef.current = setTimeout(() => {
       searchPlacesByTerm( event.target.value );
+      setModal( false );
     }, 350 );
 
+  }
+
+  const handleModal = () => { 
+    if ( places.length > 0 ) { setModal( false ) };
   }
   
   return (
@@ -27,8 +31,8 @@ export const SearchBar = () => {
       <input 
         type="text" 
         placeholder='Buscar lugar...'
-        // className="form-control"
         onChange={ onQueryChange }
+        onClick={() => handleModal()}
       />
       <SearchResults />
     </div>

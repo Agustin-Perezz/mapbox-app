@@ -3,8 +3,9 @@ import { Feature } from '../../interfaces/places';
 
 type PlaceActions = 
 | { type: 'setUserLocation', payload: [ number, number ]; }
-| { type: 'setPlaces', payload: Feature[] }
+| { type: 'setPlaces', payload: Feature[]; }
 | { type: 'isLoadingPlaces' }
+| { type: 'setModal', payload: boolean; }
 
 export const placesReducer = ( state: PlacesState, action: PlaceActions ): PlacesState => {
 
@@ -28,6 +29,12 @@ export const placesReducer = ( state: PlacesState, action: PlaceActions ): Place
       return {
         ...state,
         places: action.payload
+      }
+
+    case 'setModal':
+      return { 
+        ...state,
+        showModal: action.payload
       }
   
     default:

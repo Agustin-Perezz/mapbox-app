@@ -55,12 +55,14 @@
   background-color: rgb(248, 240, 240);
   padding: 5px;
   border-radius: 5px;
+  border: 0.5px #808e97;
 }
 
 input {
   outline: none;
   border: none;
-  margin-left: 3px;
+  margin-left: 10px;
+  background-color: transparent;
 }
 
 .alert {
@@ -95,10 +97,24 @@ span {
   padding: 5px;
 }
 
+.modal-close { 
+  display: none;
+}
+
+.modal-open { 
+  display: flex;
+}
+
+.button-close { 
+  /* border: 1px solid #808e97; */
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
 @media screen and ( max-width: 370px ) {
   
   .btn-container {
-    height: 100vh;
+    height: 96vh;
     flex-direction: column;
     justify-content: end;
     align-items: flex-end;
@@ -107,7 +123,10 @@ span {
   }
 
   .search-container { 
-    left: 60px;  
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    left: 0;
   }
 
 }

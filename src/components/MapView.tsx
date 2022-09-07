@@ -15,14 +15,13 @@ export const MapView = () => {
 
   const divMap = useRef<HTMLDivElement>( null );
 
-  // Montamos el mapa solo cuando ya tengamos la localizacion.
   useLayoutEffect(() => {
     if ( !isLoading ) { 
       const map = new Map ({
-        container: divMap.current!,
-        style: 'mapbox://styles/mapbox/outdoors-v11',
-        center: userLocation,
-        zoom: 14
+          container: divMap.current!,
+          style: 'mapbox://styles/mapbox/outdoors-v11',
+          center: userLocation,
+          zoom: 14
         });
 
         setMap( map );
@@ -34,7 +33,6 @@ export const MapView = () => {
     
   }
   
-  // Mandamo de esa manera la ref para poder tener multiples mapas.
   return (
     <div 
       ref={ divMap } 

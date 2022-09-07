@@ -2,13 +2,11 @@ import { useContext, useState } from 'react';
 import { LoadingPlaces } from '.';
 import { MapContext, PlacesContext } from '../context';
 import { Feature } from '../interfaces/places';
-import { LocationAndDistance } from './LocationAndDistance';
-
 
 export const SearchResults = () => {
 
-  const { places, isLoadingPlaces, userLocation  } = useContext( PlacesContext );
-  const { map, getRouteBetweenPoints, stats  } = useContext( MapContext );
+  const { places, isLoadingPlaces, userLocation, showModal, setModal } = useContext( PlacesContext );
+  const { map, getRouteBetweenPoints } = useContext( MapContext );
 
   const [activeId, setActiveId] = useState('');
 
@@ -37,8 +35,10 @@ export const SearchResults = () => {
   }
 
   return (
-    <ul className="list-group">
-      
+    <ul className={`list-group ${ showModal ? 'modal-close' : 'modal-open'}`}
+      onClick={() => setModal( true )}
+    >
+
       {
         places.map( place => (
             <li 
@@ -59,7 +59,13 @@ export const SearchResults = () => {
             </li>
           ))
       }
-
+    <button 
+      type="button" 
+      className="btn btn-danger button-close"
+      onClick={() => setModal( true)}
+      >
+        Close
+      </button>
     </ul>
   )
 }

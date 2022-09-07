@@ -10,6 +10,7 @@ export interface PlacesState {
   userLocation?: [ number, number ]
   isLoadingPlaces: boolean;
   places: Feature[];
+  showModal: boolean;
 }
 
 const INIT_STATE : PlacesState = {
@@ -17,6 +18,7 @@ const INIT_STATE : PlacesState = {
   userLocation: undefined,
   isLoadingPlaces: false,
   places: [],
+  showModal: false,
 }
 
 interface Props {
@@ -52,12 +54,17 @@ export const PlacesProvider = ({ children }: Props ) => {
     
   }
   
+  const setModal = ( show: boolean ) => {
+    dispatch({ type: 'setModal', payload: show });
+  }
+  
   return (
     <PlacesContext.Provider value={{
       ...state,
 
       // Methods
-      searchPlacesByTerm
+      searchPlacesByTerm,
+      setModal
     }}>
       { children }
     </PlacesContext.Provider>

@@ -15,8 +15,6 @@ export const BtnMyLocation = () => {
       zoom: 14,
       center: userLocation
     })
-
-      
   }
   
   return (
