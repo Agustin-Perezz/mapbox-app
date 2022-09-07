@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mapbox-app/static/css/main.356ad8aa.css",
+    "main.js": "/mapbox-app/static/js/main.a2877269.js",
+    "index.html": "/mapbox-app/index.html",
+    "main.356ad8aa.css.map": "/mapbox-app/static/css/main.356ad8aa.css.map",
+    "main.a2877269.js.map": "/mapbox-app/static/js/main.a2877269.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.356ad8aa.css",
+    "static/js/main.a2877269.js"
+  ]
+}
