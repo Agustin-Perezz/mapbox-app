@@ -1,27 +1,19 @@
+## Pokedex App
 
-# URL PAGINA: https://maps-app-mapbox-beta.netlify.app/ 
+*Esta aplicación fue inicializada con* [Creat React App](https://create-react-app.dev/)
 
+La aplicación permite al usuario navegar por el mapa, buscar países, ciudades, poner marcadores, ver distancia y tiempo de trayecto entre dos puntos seleccionados.
+ 
+Las bases de este proyecto fueron desarrolladas en un curso de react, posteriormente le agregue algunas funcionalidades y estilos adicionales. 
 
+Link Deploy: https://agustin-perezz.github.io/mapbox-app/
 
-## Aplicación
+## Construido con
 
-Esta app fue desarrollada en un curso de React de udemy, luego de terminarla, le agregue un par de detalles y features para mejorarla aún más.
+* [React](https://es.reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
 
-Se utilizó para su desarrollo: React, TypeScript, CSS.
-El mapa es obtenido mediante Mapbox y se utilizó axios para las peticiones a distintas apis.
+## Autor
 
-Espero que les guste.
-
-
-## Instalación de la app.
-
-Pongan su propio token de acceso, lo pueden conseguir en:  https://account.mapbox.com
-
-```bash
-  git clone https://github.com/Agustin-Perezz/maps-app-mapbox-beta
-  cd <nombre-carpeta>
-  npm i
-  npm start
-  listo
-```
-    
+Agustin Nicolas Perez - [Linkedin](https://www.linkedin.com/in/agustinperez-front-end-developer/).
